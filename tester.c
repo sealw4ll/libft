@@ -4,5 +4,9 @@
 
 int main(void)
 {
-	printf("%c\n", ('l'));
+	char b[100] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    char a[100] = "test";
+
+	printf("%s\n", ft_memmove(b, a, 4));
+	printf("%s\n", memmove(b, a, 4));
 }

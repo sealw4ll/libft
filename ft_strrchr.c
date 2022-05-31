@@ -6,7 +6,7 @@
 /*   By: wting <wting@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 21:47:11 by wting             #+#    #+#             */
-/*   Updated: 2022/05/26 21:52:08 by wting            ###   ########.fr       */
+/*   Updated: 2022/05/31 13:13:21 by wting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*strrchr(const char *s, int c)
 	i = ft_strlen(s) - 1;
 	while (s[i] && i > 0)
 	{
-		if (*s == (unsigned char)c)
-			return (s);
+		if (*s == c)
+			return ((char *)s);
 		--i;
 	}
 	return (NULL);
