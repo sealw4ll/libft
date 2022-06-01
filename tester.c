@@ -4,9 +4,8 @@
 
 int main(void)
 {
-	char b[100] = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-    char a[100] = "test";
-
-	printf("%s\n", ft_memmove(b, a, 4));
-	printf("%s\n", memmove(b, a, 4));
+	char b[20] = "abbbbbbbbbbbbb";
+    // char a[100] = "test";
+	printf("%s\n", strrchr(b, 'c'));
+	printf("%s\n", ft_strrchr(b, 'c'));
 }
