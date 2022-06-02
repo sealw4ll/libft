@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wting <wting@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 21:47:11 by wting             #+#    #+#             */
-/*   Updated: 2022/06/02 21:55:47 by wting            ###   ########.fr       */
+/*   Created: 2022/06/02 21:10:38 by wting             #+#    #+#             */
+/*   Updated: 2022/06/02 21:52:19 by wting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_atoi(const char *str)
 {
-	int	i;
-	int	j;
+	int		neg;
+	long	total;
 
-	j = 0;
-	i = ft_strlen(s);
-	while (j < i)
+	total = 0;
+	neg = 1;
+	while ((*str >= 9 && *str <= 13) || *str == ' ')
+		++str;
+	if (*str == '-' || *str == '+')
 	{
-		++s;
-		++j;
+		if (*str == '-')
+			neg *= -1;
+		++str;
 	}
-	while (j >= 0)
+	while (*str >= '0' && *str <= '9')
 	{
-		if (*s == c)
-			return ((char *)s);
-		--s;
-		--j;
+		total = (total * 10) + (*str - '0');
+		++str;
+		if (total != (total * 2) / 2 && neg == 1)
+			return (-1);
+		if (total != (total * 2) / 2 && neg == -1)
+			return (0);
 	}
-	return (NULL);
+	return ((long)neg * total);
 }
