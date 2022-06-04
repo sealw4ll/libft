@@ -6,7 +6,7 @@
 /*   By: wting <wting@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 21:10:38 by wting             #+#    #+#             */
-/*   Updated: 2022/06/02 22:39:39 by wting            ###   ########.fr       */
+/*   Updated: 2022/06/04 12:58:20 by wting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ int	ft_atoi(const char *str)
 		if (total != (total * 2) / 2 && neg == -1)
 			return (0);
 	}
-	return ((long)neg * total);
+	return ((int)(neg * total));
 }

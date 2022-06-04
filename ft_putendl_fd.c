@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester.c                                           :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wting <wting@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 21:56:14 by wting             #+#    #+#             */
-/*   Updated: 2022/06/04 21:25:59 by wting            ###   ########.fr       */
+/*   Created: 2022/06/04 20:52:36 by wting             #+#    #+#             */
+/*   Updated: 2022/06/04 20:54:10 by wting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>	
 #include "libft.h"
 
-int	main(void)
+void	ft_putendl_fd(char *s, int fd)
 {
-	ft_putnbr_fd(12345, 1);
+	if (!s)
+		return ;
+	while (*s)
+		write(fd, &*s++, 1);
+	write(fd, "\n", 1);
 }

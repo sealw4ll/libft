@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester.c                                           :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wting <wting@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 21:56:14 by wting             #+#    #+#             */
-/*   Updated: 2022/06/04 21:25:59 by wting            ###   ########.fr       */
+/*   Created: 2022/06/04 16:52:08 by wting             #+#    #+#             */
+/*   Updated: 2022/06/04 17:10:43 by wting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>	
 #include "libft.h"
 
-int	main(void)
+void	ft_striteri(char *s, char (*f)(unsigned int, char*))
 {
-	ft_putnbr_fd(12345, 1);
+	int		i;
+
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		++i;
+	}
 }

@@ -1,20 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tester.c                                           :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wting <wting@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/02 21:56:14 by wting             #+#    #+#             */
-/*   Updated: 2022/06/04 21:25:59 by wting            ###   ########.fr       */
+/*   Created: 2022/06/04 21:37:48 by wting             #+#    #+#             */
+/*   Updated: 2022/06/04 21:49:19 by wting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <ctype.h>	
 #include "libft.h"
 
-int	main(void)
+int	getwords(char const *s, char c)
 {
-	ft_putnbr_fd(12345, 1);
+	int	count;
+
+	count = 0;
+	while (*s == c)
+		++s;
+	while (*s)
+	{
+		if (*s == c)
+			++count;
+		while (*s == c)
+			++s;
+	
+	}
+	return (count);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char **a;
+
+	a = malloc(sizeof(char) * (getwords(s, c) + 1));
 }
