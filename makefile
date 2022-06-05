@@ -23,6 +23,7 @@ $(NAME): $(OBJ)
 
 clean:
 	@rm -f $(OBJ)
+	@rm -f $(BONUS_OBJ)
 	@echo cleaned objects
 
 fclean: clean
@@ -34,7 +35,7 @@ test:
 	@./tester
 	@rm -f tester
 
-re: fclean $(NAME)
+re: fclean $(NAME) 
 
 ar:
 	@ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
