@@ -6,7 +6,7 @@
 /*   By: wting <wting@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 21:56:14 by wting             #+#    #+#             */
-/*   Updated: 2022/06/04 21:25:59 by wting            ###   ########.fr       */
+/*   Updated: 2022/06/05 15:52:35 by wting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,11 @@
 
 int	main(void)
 {
-	ft_putnbr_fd(12345, 1);
+	char	**a = ft_split("      split       this for   me  !       ", ' ');
+	int i = -1;
+	while(a[++i])
+		printf("%s\n", a[i]);
+	while (a[--i])
+		free(a[i]);
+	free (a);
 }
