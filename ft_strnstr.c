@@ -6,7 +6,7 @@
 /*   By: wting <wting@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 09:58:14 by wting             #+#    #+#             */
-/*   Updated: 2022/06/02 21:54:56 by wting            ###   ########.fr       */
+/*   Updated: 2022/06/07 16:30:35 by wting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (!*haystack)
-		return (0);
-	if (*needle == 0 || len == 0)
+	if (!*needle)
 		return ((char *)haystack);
-	while (haystack && len)
+	if (!len)
+		return (0);
+	while (*haystack && len > 0)
 	{
 		if (*haystack == *needle)
 		{

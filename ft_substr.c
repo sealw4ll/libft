@@ -6,7 +6,7 @@
 /*   By: wting <wting@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 11:23:26 by wting             #+#    #+#             */
-/*   Updated: 2022/06/04 16:58:17 by wting            ###   ########.fr       */
+/*   Updated: 2022/06/07 19:23:30 by wting            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	a = malloc(len + 1);
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	a = malloc(sizeof(char) * len + 1);
 	if (!a)
 		return (NULL);
-	if (start < ft_strlen(s))
+	a[0] = '\0';
+	if (start <= len)
 	{
 		while (i < len)
 		{
